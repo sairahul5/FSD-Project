@@ -1,0 +1,172 @@
+.home {
+  padding: 3rem 0 5rem;
+}
+
+.home__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.home__hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.home__hero-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home__hero-card::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -8%;
+  width: 240px;
+  height: 80%;
+  background: radial-gradient(circle at 30% 40%, rgba(0, 0, 0, 0.12), transparent 70%);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.home__eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-500);
+  margin: 0 0 0.8rem;
+}
+
+.home__title {
+  margin: 0 0 1rem;
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  letter-spacing: -0.03em;
+}
+
+.home__lead {
+  font-size: 1.1rem;
+  color: var(--ink-700);
+  max-width: 540px;
+}
+
+.home__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.8rem 0 2.2rem;
+}
+
+.home__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line-200);
+}
+
+.home__stats strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.home__stats span {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+}
+
+.home__hero-aside {
+  display: grid;
+  gap: 1rem;
+}
+
+.home__tile {
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--line-200);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow-soft);
+  animation: rise 0.6s ease both;
+}
+
+.home__tile-metric {
+  display: grid;
+  gap: 0.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.home__tile-metric strong {
+  font-size: 1.6rem;
+}
+
+.home__tile-metric span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-500);
+}
+
+.home__tile:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.home__tile:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.home__tile h3 {
+  margin: 0 0 0.5rem;
+}
+
+.home__tile p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.home__flow {
+  margin-top: 3rem;
+}
+
+.home__flow-card {
+  display: grid;
+  gap: 2rem;
+}
+
+.home__flow-card h2 {
+  margin: 0 0 0.5rem;
+}
+
+.home__flow-card p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.home__steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.home__steps span {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-500);
+  text-transform: uppercase;
+}
+
+.home__steps h4 {
+  margin: 0.5rem 0 0.35rem;
+}
+
+.home__steps p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+@media (max-width: 900px) {
+  .home__hero {
+    grid-template-columns: 1fr;
+  }
+}

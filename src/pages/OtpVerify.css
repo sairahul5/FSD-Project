@@ -1,0 +1,60 @@
+.otp {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 24px;
+}
+
+.otp__panel {
+  width: min(460px, 100%);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.otp__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.otp__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--ink-500);
+}
+
+.otp__title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.otp__subtitle {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.otp__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.otp__field {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-700);
+}
+
+.otp__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.otp__status {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-700);
+}

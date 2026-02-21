@@ -1,0 +1,75 @@
+.register {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 24px;
+}
+
+.register__panel {
+  width: min(480px, 100%);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.register__header {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.register__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--ink-500);
+}
+
+.register__title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.register__subtitle {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.register__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.register__field {
+  display: grid;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-700);
+}
+
+.register__status {
+  margin: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-700);
+}
+
+.register__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--ink-500);
+}
+
+.register__link {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--ink-900);
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}

@@ -1,0 +1,67 @@
+.bookings {
+  padding: 2.5rem 0 4rem;
+}
+
+.bookings__header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.bookings__filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bookings__list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.bookings__card {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--line-200);
+  background: var(--surface-100);
+  box-shadow: var(--shadow-soft);
+}
+
+.bookings__card h3 {
+  margin: 0 0 0.35rem;
+}
+
+.bookings__meta {
+  margin: 0 0 0.8rem;
+  color: var(--ink-500);
+  font-size: 0.9rem;
+}
+
+.bookings__dates {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--ink-700);
+}
+
+.bookings__status {
+  margin: 0;
+  color: var(--ink-700);
+}
+
+@media (max-width: 900px) {
+  .bookings__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bookings__card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

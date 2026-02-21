@@ -1,0 +1,84 @@
+.app {
+  min-height: 100vh;
+  color: var(--ink-900);
+}
+
+.app__section {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+}
+
+.app__panel {
+  background: var(--surface-100);
+  border: 1px solid var(--line-200);
+  border-radius: 24px;
+  padding: clamp(1.5rem, 3vw, 2.4rem);
+  box-shadow: var(--shadow-soft);
+  animation: rise 0.55s ease both;
+}
+
+.app__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0;
+  color: var(--ink-500);
+  font-size: 1.05rem;
+}
+
+.app__button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.4rem;
+  background: var(--accent-500);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app__button:hover {
+  background: #1d1d1d;
+}
+
+.app__ghost {
+  appearance: none;
+  border: 1px solid var(--line-300);
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+  background: transparent;
+  color: var(--ink-900);
+  cursor: pointer;
+}
+
+.app__input,
+.app__select,
+.app__textarea {
+  width: 100%;
+  border: 1px solid var(--line-300);
+  border-radius: 14px;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+.app__input:focus,
+.app__select:focus,
+.app__textarea:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.18);
+  outline-offset: 1px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,209 @@
+.about {
+  padding: 3rem 0 4.5rem;
+}
+
+.about__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.about__eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--ink-500);
+  margin: 0 0 0.85rem;
+}
+
+.about__panel h2 {
+  margin-top: 0;
+}
+
+.about__panel p {
+  margin: 0 0 1.2rem;
+  color: var(--ink-700);
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line-200);
+}
+
+.about__stats strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.about__stats span {
+  font-size: 0.85rem;
+  color: var(--ink-500);
+}
+
+.about__list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--ink-700);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.about__values {
+  margin-top: 2.5rem;
+}
+
+.about__team {
+  margin-top: 2.5rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about__team-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.about__team-header h2 {
+  margin: 0 0 0.4rem;
+}
+
+.about__team-header p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.about__team-count {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.about__status {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+.about__team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.about__person {
+  display: grid;
+  gap: 1rem;
+}
+
+.about__person-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.about__person-image,
+.about__person-fallback {
+  width: 72px;
+  height: 72px;
+  border-radius: 16px;
+  object-fit: cover;
+  background: var(--accent-200);
+}
+
+.about__person-fallback {
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--ink-900);
+}
+
+.about__person-role {
+  margin: 0.2rem 0 0;
+  color: var(--ink-500);
+  font-size: 0.9rem;
+}
+
+.about__person-bio {
+  margin: 0;
+  color: var(--ink-700);
+}
+
+.about__person-info {
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.about__person-info div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0.5rem;
+}
+
+.about__person-info dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink-500);
+}
+
+.about__person-info dd {
+  margin: 0;
+  color: var(--ink-700);
+}
+
+.about__person-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about__person-links a {
+  font-size: 0.85rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-300);
+  color: var(--ink-700);
+}
+
+.about__values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.about__value span {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.about__value h3 {
+  margin: 0.6rem 0 0.4rem;
+}
+
+.about__value p {
+  margin: 0;
+  color: var(--ink-500);
+}
+
+@media (max-width: 900px) {
+  .about__hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about__team-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
