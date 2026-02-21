@@ -1,76 +1,95 @@
 import './TopBar.css'
+import { useState } from 'react'
 
 const navItems = [
   { key: 'home', label: 'Home' },
+  { key: 'explore', label: 'Explore' },
   { key: 'about', label: 'About' },
-  { key: 'explore', label: 'Homestays' },
   { key: 'bookings', label: 'Bookings' },
 ]
 
 function TopBar({ route, user, onNavigate, onLogout }) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleNav = (key) => {
+    onNavigate(key);
+    setIsMenuOpen(false);
+  }
+
   return (
     <header className="top-bar">
-      <div className="top-bar__brand" role="button" onClick={() => onNavigate('home')}>
-        Turisum
-        <span>stay local</span>
+      <div className="top-bar__header">
+        <div className="top-bar__brand-container" onClick={() => onNavigate('home')}>
+          <span className="top-bar__brand">Turisum</span>
+          <span className="top-bar__tagline">stay local</span>
+        </div>
+        
+        <button 
+          className="top-bar__toggle" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? '✕' : '☰'}
+        </button>
       </div>
-      <nav className="top-bar__nav">
-        {navItems.map((item) => (
-          <button
-            key={item.key}
-            className={`top-bar__link${route === item.key ? ' top-bar__link--active' : ''}`}
-            type="button"
-            onClick={() => onNavigate(item.key)}
-          >
-            {item.label}
-          </button>
-        ))}
-        {user && (user.role === 'HOST' || user.role === 'TOURIST') ? (
-          <button
-            className={`top-bar__link${route === 'chat' ? ' top-bar__link--active' : ''}`}
-            type="button"
-            onClick={() => onNavigate('chat')}
-          >
-            Chat
-          </button>
-        ) : null}
-        {user?.role === 'ADMIN' ? (
-          <button
-            className={`top-bar__link${route === 'admin' ? ' top-bar__link--active' : ''}`}
-            type="button"
-            onClick={() => onNavigate('admin')}
-          >
-            Admin
-          </button>
-        ) : null}
-      </nav>
-      <div className="top-bar__actions">
-        {user ? (
-          <>
-            <div className="top-bar__user">
-              <span>{user.email}</span>
-              <em>{user.role}</em>
-            </div>
-            <button className="top-bar__link" type="button" onClick={() => onNavigate('mfa-setup')}>
-              MFA Setup
+
+      <div className={`top-bar__content ${isMenuOpen ? 'open' : ''}`}>
+        <nav className="top-bar__nav">
+          {navItems.map((item) => (
+            <button
+              key={item.key}
+              className={`top-bar__btn ${route === item.key ? 'top-bar__btn--active' : ''}`}
+              onClick={() => handleNav(item.key)}
+            >
+              {item.label}
             </button>
-            <button className="top-bar__cta" type="button" onClick={onLogout}>
-              Log out
+          ))}
+          
+          {user && (user.role === 'HOST' || user.role === 'TOURIST') && (
+            <button
+              className={`top-bar__btn ${route === 'chat' ? 'top-bar__btn--active' : ''}`}
+              onClick={() => handleNav('chat')}
+            >
+              Chat
             </button>
-          </>
-        ) : (
-          <>
-            <button className="top-bar__link" type="button" onClick={() => onNavigate('login')}>
-              Login
+          )}
+
+          {user?.role === 'ADMIN' && (
+            <button
+              className={`top-bar__btn ${route === 'admin' ? 'top-bar__btn--active' : ''}`}
+              onClick={() => handleNav('admin')}
+            >
+              Admin
             </button>
-            <button className="top-bar__cta" type="button" onClick={() => onNavigate('register')}>
-              Register
-            </button>
-          </>
-        )}
+          )}
+        </nav>
+
+        <div className="top-bar__actions">
+          {user ? (
+            <>
+              <div className="user-snippet">
+                <span className="user-email">{user.email}</span>
+                <span className="user-role">{user.role}</span>
+              </div>
+              <button className="btn-outline" onClick={onLogout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <button className="top-bar__btn" onClick={() => onNavigate('login')}>
+                Log in
+              </button>
+              <button className="btn-primary" onClick={() => onNavigate('register')}>
+                Sign up
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </header>
   )
 }
 
 export default TopBar
+

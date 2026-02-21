@@ -27,6 +27,14 @@ body {
   gap: 1.5rem;
 }
 
+@media (min-width: 768px) {
+  .admin__header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
 .admin__title {
   font-size: 1.875rem; /* 3xl */
   font-weight: 800;
@@ -40,8 +48,7 @@ body {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
 }
 
 .admin__tab {
@@ -55,6 +62,9 @@ body {
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .admin__tab:hover {
@@ -327,6 +337,7 @@ body {
   width: 100%; /* Fix width issue */
   background-color: #fff;
   transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box; /* Ensure padding doesn't overflow width */
 }
 .admin__field input:focus, 
 .admin__field select:focus, 
@@ -417,88 +428,5 @@ body {
 .status-pill--warning { background: #fef3c7; color: #92400e; }
 .status-pill--neutral { background: #f3f4f6; color: #374151; }
 
-.admin__row:last-child { border-bottom: none; }
-
 /* Utilities */
 .hidden { display: none; }
-
-.stat-card {
-  transition: transform 0.2s;
-}
-.stat-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-}
-
-/* Form Styles */
-.admin-input, .admin-select, .admin-textarea {
-  display: block;
-  width: 100%;
-  border-radius: 0.5rem;
-  border: 1px solid #d1d5db;
-  padding: 0.625rem;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  box-sizing: border-box;
-}
-.admin-input:focus, .admin-select:focus, .admin-textarea:focus {
-  outline: 2px solid var(--primary);
-  border-color: transparent;
-}
-
-.admin-btn-primary {
-  background-color: var(--text-main);
-  color: white;
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.admin-btn-primary:hover {
-  background-color: #000000;
-}
-
-.admin-btn-ghost {
-  background-color: transparent;
-  color: var(--text-muted);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-}
-.admin-btn-ghost:hover {
-  background-color: #f3f4f6;
-  color: var(--text-main);
-}
-
-.admin-table-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  border-bottom: 1px solid #f3f4f6;
-}
-.admin-table-row:last-child {
-  border-bottom: none;
-}
-
-.admin-form-container {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-}
-
-.admin-grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1rem;
-}
-@media (min-width: 768px) {
-    .admin-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
