@@ -20,7 +20,7 @@ function TopBar({ route, user, onNavigate, onLogout }) {
     <header className="top-bar">
       <div className="top-bar__header">
         <div className="top-bar__brand-container" onClick={() => onNavigate('home')}>
-          <span className="top-bar__brand">Turisum</span>
+          <span className="top-bar__brand">Turism</span>
           <span className="top-bar__tagline">stay local</span>
         </div>
         
