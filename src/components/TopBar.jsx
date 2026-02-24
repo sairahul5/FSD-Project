@@ -54,12 +54,21 @@ function TopBar({ route, user, onNavigate, onLogout }) {
             </button>
           )}
 
-          {user?.role === 'ADMIN' && (
+          {(user?.role === 'ADMIN' || user?.role === 'EDITOR') && (
             <button
               className={`top-bar__btn ${route === 'admin' ? 'top-bar__btn--active' : ''}`}
               onClick={() => handleNav('admin')}
             >
-              Admin
+              {user.role === 'EDITOR' ? 'Editor' : 'Admin'}
+            </button>
+          )}
+
+          {user && (
+            <button
+              className={`top-bar__btn ${route === 'mfa-setup' ? 'top-bar__btn--active' : ''}`}
+              onClick={() => handleNav('mfa-setup')}
+            >
+              MFA Setup
             </button>
           )}
         </nav>

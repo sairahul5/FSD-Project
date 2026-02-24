@@ -65,7 +65,7 @@ export async function verifyOtp(token, code) {
   return data
   */
   // Mock verification always succeeds
-  return Promise.resolve({ token: 'dummy-verified-token', email: 'user@example.com', role: 'USER', mfaEnabled: true });
+  return Promise.resolve({ token: 'dummy-verified-token', email: 'user@example.com', role: 'TOURIST', mfaEnabled: true });
 }
 
 export async function setupMfa() {
